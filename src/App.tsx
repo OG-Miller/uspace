@@ -1,35 +1,44 @@
 import * as React from "react";
 import styled from "styled-components";
-import {Header} from "./Header";
-import {Toolbar} from "./Toolbar";
-import {Main} from "./Main";
+import { Header } from "./Header";
+import { Toolbar } from "./Toolbar";
+import { Main } from "./Main";
 
 export interface AppProps {
 }
 
 export const App = () => (
-  <AppWrapper>
-       <ToolbarWrapper>
-           <Toolbar/> 
-       </ToolbarWrapper>
-       <HeaderWrapper>
-           <Header/> 
-       </HeaderWrapper>
-       <MainWrapper>
-           <Main/> 
-       </MainWrapper>
-  </AppWrapper>
+    <AppWrapper>
+        <ToolbarWrapper>
+            <Toolbar />
+        </ToolbarWrapper>
+        <HeaderWrapper>
+            <Header />
+        </HeaderWrapper>
+        <MainWrapper>
+            <Main />
+        </MainWrapper>
+    </AppWrapper>
 );
 
 const AppWrapper = styled.div`
+
+ --app-gray: #F9F7F7;
+ --grid-gray: #B7B5B5;
+  --app-font: 'IBM Plex Sans', sans-serif;
+
     display: grid;
     width: 100vw;
     height: 100vh;
-    background-color: lightgray;
+    background-color: var(--app-gray);
    
     grid-template-areas: 
      "header"
-     "main" ;
+     "main";
+
+    grid-template-rows: 1fr 09fr;
+    grid-template-columns: 1fr;
+
 
 
  @media (min-width: 570px) {  
@@ -38,24 +47,25 @@ const AppWrapper = styled.div`
     ". toolbar main main .";
     ". toolbar main main .";
 
-    grid-template-columns: 1fr 2fr 3fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 5fr 5fr 1fr;
     grid-template-rows: 1fr 09fr;
   }
 
 `
 const HeaderWrapper = styled.div`
     grid-area: header;
-    background-color: lightblue;
-    border: 1px solid black;
+    background-color: var(--app-gray);
+    border: 1px solid var(--grid-gray);
     border-bottom: 0px;
 
 `
 const ToolbarWrapper = styled.div`
     grid-area: toolbar;
     display:none;
-    background-color: gray;
-    border: 1px solid black;
+    background-color: var(--app-gray);
+    border: 1px solid var(--grid-gray);
     border-right: 0px;
+    padding-top: 30px;
 
  @media (min-width: 570px) {  
    display: grid; 
@@ -66,8 +76,9 @@ const ToolbarWrapper = styled.div`
 `
 const MainWrapper = styled.div`
     grid-area: main;
-    background-color: lightgreen;
-    border: 1px solid black;
+    background-color: var(--app-gray);
+    border: 1px solid var(--grid-gray);
+
 `
 
 
