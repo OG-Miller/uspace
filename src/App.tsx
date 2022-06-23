@@ -8,31 +8,38 @@ export interface AppProps {
 }
 
 export const App = () => (
-    <AppWrapper>
-        <ToolbarWrapper>
-            <Toolbar />
-        </ToolbarWrapper>
-        <HeaderWrapper>
-            <Header />
-        </HeaderWrapper>
-        <MainWrapper>
-            <Main />
-        </MainWrapper>
-    </AppWrapper>
+        <AppLayout>
+            <ToolbarWrapper>
+                <Toolbar />
+            </ToolbarWrapper>
+            <HeaderWrapper>
+                <Header />
+            </HeaderWrapper>
+            <MainWrapper>
+                <Main />
+            </MainWrapper>
+        </AppLayout>
 );
 
-const AppWrapper = styled.div`
+//const AppWrapper= styled.div`
+//    display: grid;
+//    grid-template-columns: repeat(24, 1fr);
+//`
+
+
+
+const AppLayout = styled.div`
 
  --app-gray: #F9F7F7;
  --grid-gray: #B7B5B5;
-  --app-font: 'IBM Plex Sans', sans-serif;
+ --app-font: 'Source Sans Pro', sans-serif;
 
     display: grid;
-    width: 100vw;
+    width: 25fr;
     height: 100vh;
     background-color: var(--app-gray);
    
-    grid-template-areas: 
+   grid-template-areas: 
      "header"
      "main";
 
