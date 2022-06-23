@@ -28,7 +28,8 @@
   },
   "scripts": {
     "compile": "tsc",
-    "start": "webpack-dev-server --mode development --open --hot",
+    "compile:watch": "tsc --watch",
+    "dev": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "build:watch": "webpack --watch"
   }
