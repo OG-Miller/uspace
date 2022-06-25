@@ -11,6 +11,6 @@
     "esModuleInterop": true
 },
   "include": [
-    "src/index.tsx"
+    "src/index.tsx","server/server.ts"
   ]
 }

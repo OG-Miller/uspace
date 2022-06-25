@@ -8,24 +8,27 @@ export interface AppProps {
 }
 
 export const App = () => (
-        <AppLayout>
-            <ToolbarWrapper>
-                <Toolbar />
-            </ToolbarWrapper>
-            <HeaderWrapper>
-                <Header />
-            </HeaderWrapper>
-            <MainWrapper>
-                <Main />
-            </MainWrapper>
-        </AppLayout>
+    <AppWrapper>
+    <AppLayout>
+        <ToolbarWrapper>
+            <Toolbar />
+        </ToolbarWrapper>
+        <HeaderWrapper>
+            <Header />
+        </HeaderWrapper>
+        <MainWrapper>
+            <Main />
+        </MainWrapper>
+    </AppLayout>
+    </AppWrapper>
 );
 
-//const AppWrapper= styled.div`
-//    display: grid;
-//    grid-template-columns: repeat(24, 1fr);
-//`
-
+const AppWrapper = styled.div`
+    display: 'grid',
+    gridTemplateRows: '70vh',
+    gridAutoRows: 'minmax(min-content, max-content)',
+    gridTemplateColumns: 'repeat(24, 1fr)'
+`
 
 
 const AppLayout = styled.div`
@@ -35,7 +38,7 @@ const AppLayout = styled.div`
  --app-font: 'Source Sans Pro', sans-serif;
 
     display: grid;
-    width: 25fr;
+    width: 24fr;
     height: 100vh;
     background-color: var(--app-gray);
    
@@ -43,7 +46,7 @@ const AppLayout = styled.div`
      "header"
      "main";
 
-    grid-template-rows: 1fr 09fr;
+    grid-template-rows: 1fr 9fr;
     grid-template-columns: 1fr;
 
 
@@ -54,8 +57,8 @@ const AppLayout = styled.div`
     ". toolbar main main .";
     ". toolbar main main .";
 
-    grid-template-columns: 1fr 3fr 5fr 5fr 1fr;
     grid-template-rows: 1fr 09fr;
+    grid-template-columns: 2fr 5fr 7fr 7fr 2fr;
   }
 
 `

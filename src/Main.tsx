@@ -4,6 +4,8 @@ import styled from 'styled-components';
 export const Main = () => (
 <Wrapper>
     <p>...the uncarved block symbolises potential</p>
+    <p>Test</p>
+    <p>Test</p>
 </Wrapper> 
 );
 
