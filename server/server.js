@@ -1,6 +1,10 @@
-import http from 'http';
-import fs from 'fs';
-import path from 'path';
+//import http from 'http';
+//import fs from 'fs';
+//import path from 'path';
+
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
 http.createServer((request, response) => {
 
@@ -13,7 +17,7 @@ http.createServer((request, response) => {
 
     let extname = String(path.extname(filePath)).toLowerCase();
 
-    const mimeTypes: Record<string, string> = {
+    const mimeTypes = {
         '.html': 'text/html',
         '.js': 'text/javascript',
         '.css': 'text/css',
@@ -36,7 +40,7 @@ http.createServer((request, response) => {
     fs.readFile(filePath, (error, content) => {
         if (error) {
             if (error.code === 'ENOENT') {
-                fs.readFile('./404.html', (_, content) => {
+                fs.readFile('../src/404.html', (_, content) => {
 
                     response.writeHead(404, { 'Content-Type': 'text/html' });
                     response.end(content, 'utf-8');
@@ -56,7 +60,7 @@ http.createServer((request, response) => {
 
 
 
-}).listen(8125);
-console.log('server running at http://127.0.0.1:8125/');
+}).listen(8000);
+console.log('server running at http://127.0.0.1:8000/');
 
 

@@ -1,5 +1,5 @@
 import * as React from "react";
-import {ToolbarOption} from './ToolbarOption';
+import {ToolbarOption} from './toolbar-option';
 import styled from 'styled-components';
 
 export const Toolbar = () => (

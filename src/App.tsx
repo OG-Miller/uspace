@@ -1,27 +1,29 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Header } from "./Header";
-import { Toolbar } from "./Toolbar";
-import { Main } from "./Main";
+import { Header } from "./header";
+import { Toolbar } from "./toolbar";
+import { Main } from "./main";
 
 export interface AppProps {
 }
 
-export const App = () => (
+export const App = () => {
+
+return (
     <AppWrapper>
-    <AppLayout>
-        <ToolbarWrapper>
-            <Toolbar />
-        </ToolbarWrapper>
-        <HeaderWrapper>
-            <Header />
-        </HeaderWrapper>
-        <MainWrapper>
-            <Main />
-        </MainWrapper>
-    </AppLayout>
+        <AppLayout>
+            <ToolbarWrapper>
+                <Toolbar />
+           </ToolbarWrapper>
+            <HeaderWrapper>
+              <Header />
+            </HeaderWrapper>
+            <MainWrapper>
+                <Main />
+            </MainWrapper>
+        </AppLayout>
     </AppWrapper>
-);
+)};
 
 const AppWrapper = styled.div`
     display: 'grid',
