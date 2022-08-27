@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Toolbar = () => (
     <Wrapper> 
      <Hr/>
-        <ToolbarOption title="Home"/>
+        <ToolbarOption title="Home"><p>"home????"</p></ToolbarOption>
      <Hr/>
         <ToolbarOption title="Search"/>
      <Hr/>

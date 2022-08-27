@@ -27,9 +27,10 @@
     "webpack-dev-server": "^4.9.1"
   },
   "scripts": {
+    "server": "node server/server.js",
     "compile": "tsc",
     "compile:watch": "tsc --watch",
-    "dev": "webpack-dev-server --mode development --open --hot",
+    "dev": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
     "build:watch": "webpack --watch"
   }

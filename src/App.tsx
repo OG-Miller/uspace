@@ -3,27 +3,35 @@ import styled from "styled-components";
 import { Header } from "./header";
 import { Toolbar } from "./toolbar";
 import { Main } from "./main";
+import { RoutingContext } from "./routing-context";
 
 export interface AppProps {
 }
 
+
 export const App = () => {
 
-return (
-    <AppWrapper>
-        <AppLayout>
-            <ToolbarWrapper>
-                <Toolbar />
-           </ToolbarWrapper>
-            <HeaderWrapper>
-              <Header />
-            </HeaderWrapper>
-            <MainWrapper>
-                <Main />
-            </MainWrapper>
-        </AppLayout>
-    </AppWrapper>
-)};
+    const [state, setState] = React.useState("home");
+    //const GlobalState = React.useContext(RoutingContext);
+
+    return (
+        <RoutingContext.Provider value={{routeState: state, setRouteState: setState}}>
+            <AppWrapper>
+                <AppLayout>
+                    <ToolbarWrapper>
+                        <Toolbar />
+                    </ToolbarWrapper>
+                    <HeaderWrapper>
+                        <Header />
+                    </HeaderWrapper>
+                    <MainWrapper>
+                        <Main />
+                    </MainWrapper>
+                </AppLayout>
+            </AppWrapper>
+        </RoutingContext.Provider>
+    )
+};
 
 const AppWrapper = styled.div`
     display: 'grid',

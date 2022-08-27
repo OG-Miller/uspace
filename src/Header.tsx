@@ -2,13 +2,17 @@
 import * as React from "react";
 import styled from 'styled-components';
 
-export const Header = () => (
-<Wrapper> 
-    <Text>
-        <h1>The uncarved block</h1>
-    </Text>
-</Wrapper> 
-);
+export const Header = () => {
+    console.log("header log");
+
+    return (
+        <Wrapper>
+            <Text>
+                <h1>Hi</h1>
+            </Text>
+        </Wrapper>
+    )
+};
 
 const Wrapper = styled.div`
   color: black;

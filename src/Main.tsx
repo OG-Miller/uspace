@@ -1,39 +1,46 @@
 import * as React from "react";
 import styled from 'styled-components';
-import { Info } from "./info";
-import { Search}  from "./search";
-import { Home } from "./home";
-import { Route} from "./route";
+import { Button } from "./button";
+import { RoutingContext } from "./routing-context";
 
+export const Main = () => {
+    const routeState = React.useContext(RoutingContext);
 
-// routing logic
-//const Route = (props: { path: string, children: JSX.Element }): JSX.Element => {
-//    console.log('pathname' , window.location.pathname);
-//    console.log("href" , window.location.href);
-//    return window.location.pathname === props.path ? props.children : null
-//
-//
-//}
+    function loadComponent(label: string): JSX.Element {
 
-console.log(window.location.pathname);
+        switch (label) {
+            case "Home": {
+                //return <Button label="Home" />;
+                return <div>Home</div>;
+            }
+            case "Search": {
+                //return <Button label="Search" />;
+                return <div>Search</div>;
+            }
+            case "Info": {
+                // return <Button label="Info" />;
+                return <div>Info</div>;
+            }
+        }
+    }
 
-export const Main = () => (
-    <Wrapper>
-        <Route path="/Home">
-            <Home />
-        </Route>
-        <Route path="Search">
-            <Search />
-        </Route>
-        <Route path="Info">
-            <Info />
-        </Route>
-    </Wrapper>
-);
+    let component = loadComponent(routeState.routeState);
+    console.log({ component });
+
+    return (
+        <Wrapper>
+            {component}
+        </Wrapper>
+
+    )
+};
 
 const Wrapper = styled.div`
-  font-family: var(--app-font); 
+  font-family: var(--app-font);
   font-size: 20px;
   line-height: 1.6;
   padding: 40px;
 `
+
+
+
