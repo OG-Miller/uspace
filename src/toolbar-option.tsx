@@ -12,7 +12,6 @@ export const ToolbarOption = (props: ToolbarOptionProps) => {
     const { routeState, setRouteState } = useContext(RoutingContext);
 
     const handleClick = (title: string) => {
-        console.log('attempting to set global state');
         setRouteState(title);
     }
 

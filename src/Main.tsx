@@ -1,7 +1,8 @@
 import * as React from "react";
 import styled from 'styled-components';
-import { Button } from "./button";
+//import { Button } from "./button";
 import { RoutingContext } from "./routing-context";
+import { Content } from "./content";
 
 export const Main = () => {
     const routeState = React.useContext(RoutingContext);
@@ -10,22 +11,18 @@ export const Main = () => {
 
         switch (label) {
             case "Home": {
-                //return <Button label="Home" />;
-                return <div>Home</div>;
+                return <Content copy="This is the Home copy via 'Content' component"/>
             }
             case "Search": {
-                //return <Button label="Search" />;
-                return <div>Search</div>;
+                return <Content copy="This is the Search copy via 'Content' component"/>
             }
             case "Info": {
-                // return <Button label="Info" />;
-                return <div>Info</div>;
+                return <Content copy="This is the Info copy via 'Content' component"/>
             }
         }
     }
 
-    let component = loadComponent(routeState.routeState);
-    console.log({ component });
+    const component = loadComponent(routeState.routeState);
 
     return (
         <Wrapper>

@@ -15,7 +15,7 @@ export const App = () => {
     //const GlobalState = React.useContext(RoutingContext);
 
     return (
-        <RoutingContext.Provider value={{routeState: state, setRouteState: setState}}>
+        <RoutingContext.Provider value={{ routeState: state, setRouteState: setState }}>
             <AppWrapper>
                 <AppLayout>
                     <ToolbarWrapper>
