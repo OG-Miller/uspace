@@ -16,8 +16,13 @@ export const Toolbar = () => (
 
 const Wrapper = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0;
+
+
+ @media (min-width: 570px) {  
+  flex-direction: column;
+ }
 ` 
 
 const Hr = styled.div`

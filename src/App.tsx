@@ -67,9 +67,10 @@ const AppLayout = styled.div<Mode>`
    
    grid-template-areas: 
      "header"
+     "toolbar"
      "main";
 
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 1fr 1fr 9fr;
     grid-template-columns: 1fr;
 
 
