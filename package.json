@@ -29,6 +29,7 @@
   "scripts": {
     "server": "node server/server.js",
     "compile": "tsc",
+    "clean": "tsc --build --clean", 
     "compile:watch": "tsc --build --watch",
     "dev": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
