@@ -17,7 +17,7 @@ export const App = () => {
     return (
         <RoutingContext.Provider value={{ routeState: state, setRouteState: setState }}>
             <AppWrapper>
-                <AppLayout>
+                <AppLayout lightMode={true}>
                     <ToolbarWrapper>
                         <Toolbar />
                     </ToolbarWrapper>
@@ -41,16 +41,29 @@ const AppWrapper = styled.div`
 `
 
 
-const AppLayout = styled.div`
+type Mode = {
+    lightMode?: boolean;
+}
 
- --app-gray: #F9F7F7;
- --grid-gray: #B7B5B5;
+const AppLayout = styled.div<Mode>`
+
+ --light-background: #F9F7F7;
+ --light-border: #B7B5B5;
+
+ --dark-background: #322A2A;
+ --dark-border: #F9F7F7;
+
+ --background: ${props => props.lightMode ? `var(--light-background)` : `var(--dark-background)`};
+ --border: 1px solid ${props => props.lightMode ? `var(--light-border)` : `var(--dark-border)`};
+
+
  --app-font: 'Source Sans Pro', sans-serif;
 
     display: grid;
     width: 24fr;
     height: 100vh;
-    background-color: var(--app-gray);
+    background-color: var(--background);
+ 
    
    grid-template-areas: 
      "header"
@@ -72,32 +85,31 @@ const AppLayout = styled.div`
   }
 
 `
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.div<Mode>`
     grid-area: header;
-    background-color: var(--app-gray);
-    border: 1px solid var(--grid-gray);
+    background-color: var(--background);
+    border: var(--border);
     border-bottom: 0px;
 
 `
-const ToolbarWrapper = styled.div`
+const ToolbarWrapper = styled.div<Mode>`
     grid-area: toolbar;
-    display:none;
-    background-color: var(--app-gray);
-    border: 1px solid var(--grid-gray);
+    display: flex;
+    background-color: var(--background);
+    border: var(--border);
     border-right: 0px;
     padding-top: 30px;
 
  @media (min-width: 570px) {  
    display: grid; 
+   flex-direction: column;
   }
 
-
-
 `
-const MainWrapper = styled.div`
+const MainWrapper = styled.div<Mode>`
     grid-area: main;
-    background-color: var(--app-gray);
-    border: 1px solid var(--grid-gray);
+    background-color: var(--background);
+    border: var(--border); 
 
 `
 

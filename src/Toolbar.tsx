@@ -22,5 +22,5 @@ const Wrapper = styled.ul`
 
 const Hr = styled.div`
    height: 5px;
-   border-top: 1px solid var(--grid-gray);
+   border-top: var(--border);
 `
