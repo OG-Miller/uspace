@@ -16,6 +16,7 @@ export const Toolbar = () => (
 
 const Wrapper = styled.ul`
   display: flex;
+  align-contents: center;
   flex-direction: row;
   padding: 0;
 

@@ -6,15 +6,16 @@ import styled from 'styled-components';
 //}
 
 
+const StyledButton = styled.div`
+  width: 100px;
+`
+
 export const Button = (props:{label: string}) => {
  return (
         //<button onClick={(e) => handleClick(e, label)}>
-        <button>
+        <StyledButton>
             {props.label}
-        </button>
+        </StyledButton>
   
  )
 }
-
-
-

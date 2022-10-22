@@ -9,27 +9,28 @@ export interface ToolbarOptionProps {
 
 
 export const ToolbarOption = (props: ToolbarOptionProps) => {
-    const { routeState, setRouteState } = useContext(RoutingContext);
+    const { setRouteState } = useContext(RoutingContext);
 
     const handleClick = (title: string) => {
         setRouteState(title);
     }
 
     return (
-        <Wrapper>
-            <button onClick={() => handleClick(props.title)}>
+        <StyledWrapper>
+            <div onClick={() => handleClick(props.title)}>
                 {props.title}
-            </button>
-        </Wrapper>
+            </div>
+        </StyledWrapper>
     )
 };
 
-const Wrapper = styled.li`
+const StyledWrapper = styled.li`
+   display: flex;
+   justify-content: center;
    color: black;
    list-style-type: none;
    padding: 10px;
    padding-bottom: 15px;
-   width: 100%;
-  justify-self: centre;
+   width: 100px;
   font-family: var(--app-font); 
 `

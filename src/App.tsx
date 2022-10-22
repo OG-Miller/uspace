@@ -12,7 +12,6 @@ export interface AppProps {
 export const App = () => {
 
     const [state, setState] = React.useState("home");
-    //const GlobalState = React.useContext(RoutingContext);
 
     return (
         <RoutingContext.Provider value={{ routeState: state, setRouteState: setState }}>
@@ -94,16 +93,21 @@ const HeaderWrapper = styled.div<Mode>`
 
 `
 const ToolbarWrapper = styled.div<Mode>`
-    grid-area: toolbar;
     display: flex;
+    min-width: fit-content;
+    grid-area: toolbar;
     background-color: var(--background);
     border: var(--border);
-    border-right: 0px;
+    border-right: var(--border);
+    border-bottom: 0;
     padding-top: 30px;
 
  @media (min-width: 570px) {  
    display: grid; 
    flex-direction: column;
+    border-right: 0;
+    border-bottom: var(--border);
+    
   }
 
 `
