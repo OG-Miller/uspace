@@ -45,6 +45,7 @@ type Mode = {
 }
 
 const AppLayout = styled.div<Mode>`
+ --test-background: blue;
 
  --light-background: #F9F7F7;
  --light-border: #B7B5B5;
@@ -93,9 +94,9 @@ const HeaderWrapper = styled.div<Mode>`
 
 `
 const ToolbarWrapper = styled.div<Mode>`
+    grid-area: toolbar;
     display: flex;
     min-width: fit-content;
-    grid-area: toolbar;
     background-color: var(--background);
     border: var(--border);
     border-right: var(--border);
@@ -105,8 +106,8 @@ const ToolbarWrapper = styled.div<Mode>`
  @media (min-width: 570px) {  
    display: grid; 
    flex-direction: column;
-    border-right: 0;
-    border-bottom: var(--border);
+   border-right: 0;
+   border-bottom: var(--border);
     
   }
 
@@ -115,7 +116,6 @@ const MainWrapper = styled.div<Mode>`
     grid-area: main;
     background-color: var(--background);
     border: var(--border); 
-
 `
 
 

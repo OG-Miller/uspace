@@ -25,12 +25,12 @@ export const ToolbarOption = (props: ToolbarOptionProps) => {
 };
 
 const StyledWrapper = styled.li`
+   //background-color: var(--test-background);
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
    color: black;
    list-style-type: none;
-   padding: 10px;
-   padding-bottom: 15px;
-   width: 100px;
+   padding: 10px 10px 15px 10px;
+   width: 50px;
   font-family: var(--app-font); 
 `

@@ -7,7 +7,9 @@ import styled from 'styled-components';
 
 
 const StyledButton = styled.div`
+  display: flex;
   width: 100px;
+  //border: var(--border);
 `
 
 export const Button = (props:{label: string}) => {
