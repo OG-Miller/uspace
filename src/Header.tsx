@@ -7,16 +7,19 @@ export const Header = () => {
     return (
         <Wrapper>
             <Text>
-                <h1>Hi</h1>
+                <h1>Header</h1>
             </Text>
         </Wrapper>
     )
 };
 
 const Wrapper = styled.div`
+  display: flex;
   color: black;
   font-family: var(--app-font); 
   padding: 40px;
+  justify-content: center;
+
 `
 
 const Text = styled.div`
