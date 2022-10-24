@@ -11,7 +11,7 @@ export interface AppProps {
 
 export const App = () => {
 
-    const [state, setState] = React.useState("home");
+    const [state, setState] = React.useState("Home");
 
     return (
         <RoutingContext.Provider value={{ routeState: state, setRouteState: setState }}>

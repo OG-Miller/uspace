@@ -5,24 +5,25 @@ import { RoutingContext } from "./routing-context";
 import { Content } from "./content";
 
 export const Main = () => {
-    const routeState = React.useContext(RoutingContext);
+    const routeContext = React.useContext(RoutingContext);
 
     function loadComponent(label: string): JSX.Element {
 
         switch (label) {
             case "Home": {
-                return <Content copy="This is the Home copy via 'Content' component"/>
+                return <Content copy="Home component"/>
             }
             case "Search": {
-                return <Content copy="This is the Search copy via 'Content' component"/>
+                return <Content copy="Search component"/>
             }
             case "Info": {
-                return <Content copy="This is the Info copy via 'Content' component"/>
+                return <Content copy="Info component"/>
             }
         }
     }
 
-    const component = loadComponent(routeState.routeState);
+    const component = loadComponent(routeContext.routeState);
+    console.log("hello", routeContext.routeState);
 
     return (
         <Wrapper>

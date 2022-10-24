@@ -8,6 +8,4 @@ interface RouteContext {
 
 
 
-//let [routeState, setRouteState] = React.useState("home");
-//export const RoutingContext = React.createContext({ routeState, setRouteState });
 export const RoutingContext = React.createContext<RouteContext | undefined>({routeState: "Home", setRouteState: () => {}});
