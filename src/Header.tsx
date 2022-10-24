@@ -7,7 +7,7 @@ export const Header = () => {
     return (
         <Wrapper>
             <Text>
-                <h1>Header</h1>
+                <h1>HEADER</h1>
             </Text>
         </Wrapper>
     )
@@ -16,12 +16,14 @@ export const Header = () => {
 const Wrapper = styled.div`
   display: flex;
   color: black;
-  font-family: var(--app-font); 
+  font-family: var(--header-font); 
   padding: 40px;
   justify-content: center;
 
 `
 
 const Text = styled.div`
-  font-family: 'Spectral', serif;
+  //font-family: 'Spectral', serif;
+  font-family: 'Oxanium', cursive;
+  font-size: small;
 `

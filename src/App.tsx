@@ -58,6 +58,7 @@ const AppLayout = styled.div<Mode>`
 
 
  --app-font: 'Source Sans Pro', sans-serif;
+ --header-font:'Nabla', cursive; 
 
     display: grid;
     width: 24fr;
@@ -101,13 +102,14 @@ const ToolbarWrapper = styled.div<Mode>`
     border: var(--border);
     border-right: var(--border);
     border-bottom: 0;
-    padding-top: 30px;
+    padding-top: 12px;
 
  @media (min-width: 570px) {  
    display: grid; 
    flex-direction: column;
    border-right: 0;
    border-bottom: var(--border);
+   padding-top: 30px;
     
   }
 
